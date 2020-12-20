@@ -128,5 +128,29 @@ namespace EmployeePayroll_ASP.NETMVC.Repository
             else
                 return 0;
         }
+        /// <summary>
+        /// Deletes the employee.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
+        public int DeleteEmployee(int id)
+        {
+            try
+            {
+                Employee data = db.Employees.Where(x => x.EmpId == id).SingleOrDefault();
+
+                if (data != null)
+                {
+                    db.Employees.Remove(data);
+                    return db.SaveChanges();
+                }
+                else
+                    return 0;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
