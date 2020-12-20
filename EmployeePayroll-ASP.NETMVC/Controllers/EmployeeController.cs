@@ -71,5 +71,30 @@ namespace EmployeePayroll_ASP.NETMVC.Controllers
                 return View("Edit");
 
         }
+        /// <summary>
+        /// Deletes the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        public ActionResult Delete(Employee model)
+        {
+            Employee emp = employeeRepository.GetEmployee(model.EmpId);
+
+            return View(emp);
+        }
+        /// <summary>
+        /// Deletes the employee.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult DeleteEmployee(Employee model)
+        {
+            int result = employeeRepository.DeleteEmployee(model.EmpId);
+            if (result != 0)
+                return RedirectToAction("Index");
+            else
+                return View("Delete", result);
+        }
     }
 }

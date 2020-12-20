@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayroll-ASP.NETMVC", "EmployeePayroll-ASP.NETMVC\EmployeePayroll-ASP.NETMVC.csproj", "{6CAC1CF0-641B-4989-8B06-ECFADFA815DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeePayroll_ASP.NETMVC", "EmployeePayroll-ASP.NETMVC\EmployeePayroll_ASP.NETMVC.csproj", "{6CAC1CF0-641B-4989-8B06-ECFADFA815DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
