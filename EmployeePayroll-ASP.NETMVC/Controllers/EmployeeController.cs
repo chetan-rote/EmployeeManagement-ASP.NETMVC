@@ -26,7 +26,11 @@ namespace EmployeePayroll_ASP.NETMVC.Controllers
         {
             return View();
         }
-
+        /// <summary>
+        /// Registers the employee.
+        /// </summary>
+        /// <param name="employee">The employee.</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult RegisterEmployee(RegisterRequestModel employee)
         {
