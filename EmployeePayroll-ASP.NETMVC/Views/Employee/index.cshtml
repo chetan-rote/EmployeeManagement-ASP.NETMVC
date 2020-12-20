@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <head>
@@ -43,11 +44,12 @@
                 </th>
                 <th>
                     @Html.DisplayName("ACTIONS")
-                </th>                
+                </th>
+                <th></th>
             </tr>
 
             @foreach (var item in Model)
-             {
+            {
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.Name)
@@ -65,11 +67,12 @@
                         @Html.DisplayFor(modelItem => item.StartDate)
                     </td>
                     <td>
-                        <a href="@Url.Action("Edit",new { item.EmpId })" class="btn btn-success">Edit</a>
+                        <a href="@Url.Action("Edit",new { item.EmpId })" class="btn btn-success">Edit</a> |
                         <a href="@Url.Action("Delete",new { item.EmpId })" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
-             }
+            }
+
         </table>
     </div>
 </div>
