@@ -25,6 +25,12 @@ namespace EmployeePayroll_ASP.NETMVC.Models
         {
         }
 
+        public DbSet<Department> Departments { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<Salary> Salaries { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
