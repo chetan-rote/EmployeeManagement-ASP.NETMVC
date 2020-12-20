@@ -1,6 +1,8 @@
 ﻿@model EmployeePayroll_ASP.NETMVC.Models.Common.RegisterRequestModel
+
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <style>
@@ -29,6 +31,7 @@
             <div class="row">
                 @Html.ValidationMessageFor(x => x.Name, "", new { @class = "error" })
                 <label>Name</label>
+                @*@Html.TextBox("Textbox1", "val")*@
                 @Html.TextBoxFor(x => x.Name, new { @class = "form-control", id = "NameId" })
             </div>
             @Html.ValidationMessageFor(x => x.Gender, "", new { @class = "error" })
@@ -58,15 +61,19 @@
             </div>
             <div class="row">
                 <label>Salary</label>
+
+                <td>
                     @Html.ValidationMessageFor(x => x.SalaryId, "", new { @class = "error" })
                     @Html.DropDownListFor(x => x.SalaryId, new List<SelectListItem>
-                    {
-                        new SelectListItem{ Text="10000", Value = "2" },
-                        new SelectListItem{ Text="20000", Value = "1" },
-                        new SelectListItem{ Text="30000", Value = "3" },
-                        new SelectListItem{ Text="40000", Value = "4" },
-                        new SelectListItem{ Text="50000", Value = "5" }
-                    }, "Select Salary")              
+                                       {
+            new SelectListItem{ Text="10000", Value = "2" },
+           new SelectListItem{ Text="20000", Value = "1" },
+           new SelectListItem{ Text="30000", Value = "3" },
+           new SelectListItem{ Text="40000", Value = "4" },
+           new SelectListItem{ Text="50000", Value = "5" }
+        }, "Select Salary")
+
+                </td>
             </div>
             <div class="row">
                 <label>Start Date</label>
@@ -80,7 +87,7 @@
                 @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
             </div>
             <div class="btnColumn">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" @*onclick="return validate()"*@>Submit</button>
                 <button type="reset" class="btn bg-danger">Reset</button>
                 <a href="@Url.Action("EmployeeList", "Employee")" class="btn btn-success">Employee List</a>
             </div>
@@ -102,7 +109,9 @@
             }
         };
     </script>
- }
+
+}
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
