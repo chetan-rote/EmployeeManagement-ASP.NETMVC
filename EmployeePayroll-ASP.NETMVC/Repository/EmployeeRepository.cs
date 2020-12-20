@@ -9,7 +9,14 @@ namespace EmployeePayroll_ASP.NETMVC.Repository
 {
     public class EmployeeRepository
     {
+        /// <summary>
+        /// The database
+        /// </summary>
         public ApplicationDbContext db = new ApplicationDbContext();
+        /// <summary>
+        /// Gets the employees.
+        /// </summary>
+        /// <returns></returns>
         public List<EmployeeViewModel> GetEmployees()
         {
             try
@@ -37,6 +44,11 @@ namespace EmployeePayroll_ASP.NETMVC.Repository
                 throw e;
             }
         }
+        /// <summary>
+        /// Registers the employee.
+        /// </summary>
+        /// <param name="employee">The employee.</param>
+        /// <returns></returns>
         public bool RegisterEmployee(RegisterRequestModel employee)
         {
 
@@ -72,7 +84,11 @@ namespace EmployeePayroll_ASP.NETMVC.Repository
                 throw e;
             }
         }
-
+        /// <summary>
+        /// Gets the employee.
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <returns></returns>
         public Employee GetEmployee(int id)
         {
             try
