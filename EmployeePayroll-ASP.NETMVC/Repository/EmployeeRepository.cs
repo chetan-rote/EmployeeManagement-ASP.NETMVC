@@ -102,5 +102,31 @@ namespace EmployeePayroll_ASP.NETMVC.Repository
                 throw e;
             }
         }
+        /// <summary>
+        /// Updates the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        public int Update(Employee model)
+        {
+            var data = db.Employees.FirstOrDefault(x => x.EmpId == model.EmpId);
+
+            // Checking if any such record exist  
+            if (data != null)
+            {
+                data.EmpId = model.EmpId;
+                data.Name = model.Name;
+                data.Gender = model.Gender;
+                data.DepartmentId = model.DepartmentId;
+                data.Department = model.Department;
+                data.SalaryId = model.SalaryId;
+                data.Salary = model.Salary;
+                data.StartDate = model.StartDate;
+                data.Description = model.Description;
+                return db.SaveChanges();
+            }
+            else
+                return 0;
+        }
     }
 }

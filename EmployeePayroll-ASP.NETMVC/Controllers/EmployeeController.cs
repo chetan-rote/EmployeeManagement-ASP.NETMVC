@@ -47,5 +47,29 @@ namespace EmployeePayroll_ASP.NETMVC.Controllers
             }
             return View(employee);
         }
+        /// <summary>
+        /// Edits the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        public ActionResult Edit(Employee model)
+        {
+            Employee emp = employeeRepository.GetEmployee(model.EmpId);
+            return View(emp);
+        }
+        /// <summary>
+        /// Updates the specified model.
+        /// </summary>
+        /// <param name="model">The model.</param>
+        /// <returns></returns>
+        public ActionResult Update(Employee model)
+        {
+            int data = employeeRepository.Update(model);
+            if (data != 0)
+                return RedirectToAction("Index");
+            else
+                return View("Edit");
+
+        }
     }
 }
