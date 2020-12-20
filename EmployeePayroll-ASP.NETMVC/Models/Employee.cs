@@ -9,9 +9,15 @@ namespace EmployeePayroll_ASP.NETMVC.Models
 {
     public class Employee
     {
+        /// <summary>
+        /// Gets or sets the emp identifier.
+        /// </summary>
+        /// <value>
+        /// The emp identifier.
+        /// </value>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
+        
         public int EmpId { get; set; }
 
         public string Name { get; set; }
