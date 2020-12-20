@@ -5,6 +5,12 @@ namespace EmployeePayroll_ASP.NETMVC.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+        /// <summary>
+        /// Gets or sets the email.
+        /// </summary>
+        /// <value>
+        /// The email.
+        /// </value>
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -25,9 +31,20 @@ namespace EmployeePayroll_ASP.NETMVC.Models
 
     public class VerifyCodeViewModel
     {
+        /// <summary>
+        /// Gets or sets the provider.
+        /// </summary>
+        /// <value>
+        /// The provider.
+        /// </value>
         [Required]
         public string Provider { get; set; }
-
+        /// <summary>
+        /// Gets or sets the code.
+        /// </summary>
+        /// <value>
+        /// The code.
+        /// </value>
         [Required]
         [Display(Name = "Code")]
         public string Code { get; set; }
